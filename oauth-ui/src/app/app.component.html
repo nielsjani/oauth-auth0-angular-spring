@@ -1,0 +1,12 @@
+<div style="text-align:center">
+   <h1 routerLink="/" style="cursor: pointer">
+    Trump cards
+   </h1>
+  <button *ngIf="!isAuthenticated()" (click)="login()" style="float: right">Log in</button>
+  <button *ngIf="isAuthenticated()" (click)="logout()" style="float: right">Log out</button>
+  <button *ngIf="hasPermission('view:card:device')" routerLink="/device" style="float: right">Only Android tweets</button>
+  <p style="float: right">Hello, {{getIdToken().given_name}} '{{getIdToken().nickname}}' {{getIdToken().family_name}}</p>
+</div>
+
+<router-outlet></router-outlet>
+

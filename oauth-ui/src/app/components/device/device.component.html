@@ -1,0 +1,7 @@
+<h2>Android cards</h2>
+
+<div *ngIf="cards$ | async; let cards">
+  <p *ngFor="let card of cards">
+    {{card.text}}
+  </p>
+</div>
